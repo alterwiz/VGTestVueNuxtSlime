@@ -1,10 +1,15 @@
 <template>
   <div>
-    <Nuxt />
+    <Header />
+
+    <div class="w-100">
+      <Nuxt />
+    </div>
   </div>
 </template>
 
 <style>
+
 html {
   font-family:
     'Source Sans Pro',
@@ -31,20 +36,6 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
 .button--grey {
   display: inline-block;
   border-radius: 4px;
@@ -55,8 +46,12 @@ html {
   margin-left: 15px;
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
+.button--grey:hover { color: #fff; background-color: #35495e; }
+
+.background--green { background-color: rgb(4,45,35); }
+
+.background--white { background-color: #fefeff; }
+
+.container-fluid, .container-sm, .container-md, .container-lg, .container-xl { padding-left:12%;padding-right:12%; }
+
 </style>
