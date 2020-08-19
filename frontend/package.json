@@ -13,9 +13,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.12.1",
+    "@nuxtjs/toast": "^3.3.1",
     "bootstrap": "^4.5.0",
     "bootstrap-vue": "^2.15.0",
-    "nuxt": "^2.13.0"
+    "eslint-config-airbnb": "^18.2.0",
+    "nuxt": "^2.13.0",
+    "pretty-checkbox-vue": "^1.1.9"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",
