@@ -1,48 +1,32 @@
 <template>
-  <div class="container">
-    <div>
-      <b-card>
-        Welcome To Our Video Library, Please Log In
-
-        <b-form @submit="onSubmit">
-          <b-form-group
-            id="input-group-1"
-            label="Email address:"
-            label-for="input-1"
-          >
-            <b-form-input
-              id="input-1"
-              v-model="form.email"
-              type="email"
-              required
-              placeholder="Enter email"
-            ></b-form-input>
-          </b-form-group>
-          <b-button type="submit" variant="primary">Submit</b-button>
-        </b-form>
-      </b-card>
-    </div>
+  <div class="background--green w-100 h-100">
+    <div class="container pb-5">
+      <div class="d-flex background--white m-auto p-5 mb-5 mwhiteBox">
+        <LoginForm :users="users" />
+      </div> <!-- /white div -->
+    </div> <!-- /container div -->
   </div>
 </template>
 
 <script>
+
 export default {
-  data() {
-    return {
-      form: {
-        email: ''
-      },
-    };
+
+  async fetch() {
+    this.users = await fetch(
+      'http://localhost:8080/users'
+    ).then(res => res.json());
   },
-  methods: {
-    onSubmit(){
-      console.log('A form was submitted');
-    },
-  }
-}
+
+  data() {
+    return { users: { data: [] } };
+  },
+
+};
 </script>
 
 <style>
+
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -80,4 +64,15 @@ export default {
 .links {
   padding-top: 15px;
 }
+
+</style>
+
+<style scoped>
+
+  .card { border-radius: 0; }
+
+  .custom-checkbox input#input-remember { border-radius: 1px; }
+
+  .whiteBox { min-width: 35rem; min-height: 30rem; }
+
 </style>
