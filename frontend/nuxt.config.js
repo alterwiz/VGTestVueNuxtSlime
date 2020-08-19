@@ -53,12 +53,32 @@ export default {
   */
   modules: [
     // Doc: https://bootstrap-vue.js.org
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/toast',
+    '@nuxtjs/axios',
   ],
+
+  toast: {
+    position: 'bottom-center',
+  },
+
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+   extend(config, ctx) {
+     config.module.rules.push({
+       enforce: "pre",
+       test: /\.(js|vue)$/,
+       loader: "eslint-loader",
+       exclude: /(node_modules)/,
+       options: {
+         fix: true,
+       }
+     })
+   }
   }
+
+
 }
